@@ -1,0 +1,95 @@
+// photo grid transition
+.photo-grid{
+
+    // first
+    // core settings
+    & > *:nth-child(2){
+        position: relative;
+        background: url('../img/fashion-2.jpg') no-repeat center center/cover;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        // here I want to position this to the top-righ, so I used flex along with flex direction and justify content
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+    // overlay
+    & > *:nth-child(2):after{
+        content: '';
+        position: absolute;
+        background: #242969;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        transform: scale(2) translateX(60%) translateY(-60%) rotate(35deg);
+        transition: transform 1.5s cubic-bezier(.2, 1, .3, 1);
+    }
+    
+    // common settings
+    & > *:nth-child(2):hover::after{
+        transform: scale(2) translateX(0%) translateY(0%) rotate(35deg);
+    }
+    & > *:nth-child(2):hover .text{
+        // transform: translateY(0%);
+        opacity: 1;
+    }
+    
+    // text div settings
+    .text{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        z-index: 1;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+        transition: opacity 1.7s cubic-bezier(0.2, 1, 0.3, 1);
+        transition-delay: transform 500ms;
+    }
+    
+    // second
+    // core settings
+    & > *:nth-child(6){
+        position: relative;
+        background: url('../img/lifestyle-2.jpg') no-repeat center center/cover;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    // overlay
+    & > *:nth-child(6)::after{
+        content: '';
+        position: absolute;
+        background: #242969;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        transform: scale(2) translateX(-67%) translateY(-67%) rotate(35deg);
+        transition: transform 1.65s cubic-bezier(.2, 1, .3, 1);
+    }
+    // overlay hover
+    // When I hover I want the :after to change
+    & > *:nth-child(6):hover:after{
+        transform: scale(2) translateX(0%) translateY(0%) rotate(35deg);  
+    }
+    // text hover
+    // when I hover I want the text to change
+    & > *:nth-child(6):hover .text{
+        opacity: 1;
+    }
+
+}    
+

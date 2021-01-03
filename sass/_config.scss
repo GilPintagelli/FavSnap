@@ -1,0 +1,28 @@
+// color
+$dark-color: #333;
+$light-color: #f4f4f4;
+$medium-color: #eee;
+$bg-main:#1e2135;
+
+// font
+$font-weight: (
+    'lighter': 350,
+    'regular': 550,
+    'bold': 800
+);
+
+
+// set text color
+@function text-color($color){
+    @if (lightness($color) > 60) {
+        @return #333;
+    } @else {
+        @return $light-color;
+    }
+}
+
+// mixin with text and bg
+@mixin txt-bg($color) {
+    background-color: $color;
+    color: text-color($color);
+}

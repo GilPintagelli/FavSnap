@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&amp;family=Montserrat&amp;family=Raleway:ital@1&amp;family=Roboto&amp;display=swap" rel="stylesheet" />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+
+    <!-- AOS link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <link rel="stylesheet" media="screen and (max-width: 795px)" href="css/mobile.css" />
+
+    <!-- JS and jQuery script -->
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    <script type="text/javascript" src="./js/cycle2.js"></script>
+    <script type="text/javascript" src="./js/declarativeToggle.js"></script>
+    <script type="text/javascript" src="./js/lightbox.min.js"></script>
+    <title>FavSnap | Share Your Shot  </title>
+</head>
+
+<body id="home">
+
+    <main>
+
+        <!-- Modal -->
+        <div class="modal">
+            <!-- form here -->
+            <div class="wrapper p-1">
+
+                <div class="logo">
+                    <h2>Welcome to</h2>
+                    <h1 class="text-logo">Fav<span class="text-primary">Snap<i class="far fa-image fa-sm"></i></span></h1>
+                </div>
+        
+                <form>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                    </div>
+        
+                    <button class="btn" type="submit" value="Subscribe">Subscribe</button>
+        
+                    <div>
+                        <div></div>
+                        <p>or Sign in with</p>
+                    </div>
+                    <a href="https://accounts.google.com/login?hl=en" class="btn google"><i class="fab fa-google"></i> Google Account</a>
+                    <a href="https://twitter.com/login?lang=en-gb" class="btn twitter"><i class="fab fa-twitter"></i> Twitter account</a>
+                </form>
+        
+                <footer>
+                    <p>Already have an account? <a href="#">Sign here!</a></p>
+                </footer>
+        
+            </div>
+        </div>
+
+        <!-- header -->
+        <header id="showcase" tabindex="1">
+
+            <nav class="container-l" role="navigation">
+
+                <h1 class="logo">Fav<span class="text-primary">Snap<i class="fas fa-image"></i></span></h1>
+
+                <div class="social">
+                    <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="http://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="http://www.youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+
+                <!-- this will show up when it hits 786px -->
+                <span data-toggle-target=".menu" class="toggle-btn"><i class="fa fa-bars" aria-hidden="true"></i>
+                </span>
+
+                <ul class="menu">
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#latest"><i class="fas fa-bell"></i> Latest</a></li>
+                    <li><a href="#daily-photos"><i class="fas fa-camera"></i> Daily</a></li>
+                </ul>
+            </nav>
+
+            <!-- showcase -->
+            <div class="showcase-grid container-m">
+
+                <div class="showcase-content" data-aos="fade-in" data-aos-easing="ease-in" data-aos-delay="80">
+
+                    <h2 class="m-heading">Share Your <span class="text-primary">Experience</span></h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas ex commodi ad explicabo saepe exercitationem dolores consequatur optio nostrum repudiandae!</p>
+                    <a href="#" class="btn btn-primary btn-block">Sign In</a>
+
+                </div>
+                
+                <!-- icons that brings us to the next page -->
+                <a class="click" href="#latest"><i class="fas fa-chevron-down fa-3x"></i></a>
+            </div>
+
+        </header>
+
+        <!-- Section: "LATEST" -->
+        <section id="latest" class="container-m py-3" tabindex="2">
+
+            <h2 class="section-title">Latest Snapshots</h2>
+            <div class="bottom-line"></div>
+
+            <div class="photo-grid py-3">
+                
+                <figure class="card">
+                    <img src="./img/lifestyle-3.jpg" alt="lifestyle-photo">
+
+                    <div>
+                        <figcaption>This hike was absolutely amazing! Fresh air, stunning landscape. It couldn't be better.</figcaption>
+                        <div class="category lifestyle-color">#Lifestyle</div>
+                    </div>
+                </figure>
+
+                <div class="card p-1 bg-dark" data-aos="fade-down">
+                    <div class="category fashion-color">#fashion</div>
+
+                    <div class="text">
+                        <h2>How to take a bath and being stylish</h2>
+                    </div>
+                </div>
+
+                <figure class="card" data-aos="fade-right">
+                    <img src="./img/game-3.jpg" alt="lifestle-photo">
+
+                    <div>
+                        <div class="category game-color">#Game</div>
+                        <figcaption>Let's get started. Gaming time!</figcaption>
+                    </div>
+                </figure>
+
+                <figure class="card">
+                    <img src="./img/fashion-3.jpg" alt="lifestle-photo">
+
+                    <div>
+                        <div class="category fashion-color">#fashion</div>
+                        <figcaption>My best friend and I went shopping yesterday morning. We had such a good time together!</figcaption>
+                    </div>
+                </figure>
+
+                <figure class="card" data-aos="fade-left">
+                    <img src="./img/lifestyle-4.jpg" alt="lifestle-photo">
+
+                    <div>
+                        <div class="category lifestyle-color">#lifestyle</div>
+                        <figcaption>I'm making a delicious and healthy breakfast this morning</figcaption>
+                    </div>
+                </figure>
+
+                <div class="card p-1" data-aos="fade-up">
+                    <div class="category lifestyle-color">#lifestyle</div>
+
+                    <div class="text">
+                        <h2>Let's get down to work</h2>
+                    </div>
+                </div>
+
+                <figure class="card">                    
+                    <div>
+                        <figcaption>Lorem ipsum dolor sit amet consectetur adipisicing elit, nam, id.</figcaption>
+                        <div class="category game-color">#game</div>
+                    </div>
+
+                    <img src="./img/game-5.jpg" alt="lifestle-photo">
+                </figure>
+
+            </div>
+        </section>
+
+        <!-- Section: "DAILY PHOTOS" -->
+        <section id="daily-photos" class="daily-photo py-3" tabindex="3">
+            <div class="container-m">
+
+                <h2 class="section-title">Daily Photos</h2>
+                <div class="bottom-line"></div>
+                <p class="lead">This is a Slidershow and if you want to you can click or hover over the image</a></p>
+                
+                <div class="item py-2">
+
+                    <div class="item-2">
+    
+                        <div class="cycle-slideshow" data-cycle-slides=".slide" data-cycle-pause-on-hover="true">
+
+                            <!-- arrows for previous and next -->
+                            <!-- insted of icons you could use &laquo; and &raquo; -->
+                            <span class="cycle-prev"><i class="fa fa-chevron-left"></i></span>
+                            <span class="cycle-next"><i class="fa fa-chevron-right"></i></span>
+
+                            <!-- three bullet points -->
+                            <span class="cycle-pager"></span>
+
+                            <div class="slide">
+                                <img id="second" src="https://source.unsplash.com/daily" alt="">
+
+                                <p class="slide-text">This image changes every day and it is from the daily section of unsplash</p>
+                            </div>
+
+                            <div class="slide">
+                                <img id="second" src="https://source.unsplash.com/user/erondu" alt="">
+
+                                <p class="slide-text">This image changes every day and it is from the erondu section of unsplash</p>
+                            </div>
+
+                            <div class="slide">
+                                <img id="second" src="https://source.unsplash.com/random" alt="">
+
+                                <p class="slide-text">This is a random image from unsplash</p>
+                            </div>
+                        </div> 
+    
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        <!-- three-boxes-info -->
+        <!-- <section id="box-info" class="boxes-info"></section> -->
+
+    </main>
+    
+    <footer id="main-footer" class="main-footer bg-footer" tabindex="4">
+
+        <div class="top">
+            <a href="#home" rel="noopener noreferrer">Go to the Top!</a>
+        </div>
+        
+        <div class="up-footer p-2">
+            <div>
+                <h2 class="logo">Fav<span class="text-primary">Snap<i class="far fa-image"></i></span></h2>
+                
+                <a href="http://www.twitter.com" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="http://www.github.com" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                <a href="http://www.dribbble.com" title="Dribble"><i class="fab fa-dribbble fa-2x"></i></a>
+                <a href="http://www.linkedin.com" title="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Policy</a></li>
+                    <li><a href="#">Terms of service</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Community Forum</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>About Me</h3>
+                <ul>
+                    <li>Hi, I'm Luigi and I'm an aspiring Full-Stak Web Developer. I live in Italy and I'm graduated in Social Science, Qualitative and Quantitative research. I'm looking forward to learn more and grasp the secrets of Web Development. </li>
+                    <li><a href="./img/gigi.jpg" data-lightbox="mine"><img src="./img/gigi.jpg" alt=""></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="down-footer">
+            <div class="container-xl">
+                <div class="flex-container">
+                    <p>&copy; 2021 FavSnap, All Rights Reserved</p>
+                    <p>made eating a lot of <span> <i class="fas fa-cookie-bite"></i> </span> and <span><i class="fas fa-pizza-slice"></i></span> from Luigi P.</p>
+                    <p>Thank y'all guys for visiting this page!</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal script -->
+    <script src="js/modal.js"></script>
+
+    <!-- AOS scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+</body>
+
+</html>

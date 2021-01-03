@@ -1,0 +1,134 @@
+
+/* Modal */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: #333, $alpha: 0.4);
+}
+
+/* utilities */
+.container-xl{
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: .2em 0;
+    overflow: hidden;
+}
+.container-l{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 1em;
+    overflow: hidden;
+}
+.container-m{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.card{
+    @include txt-bg($light-color);
+}
+
+.text-primary{color: var(--primary-color);}
+
+.section-title{
+    color: #ebc313;
+    text-align: center;
+    font-size: 1.8em;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.l-heading{font-size: 3em;}
+.m-heading{font-size: 2.5em;}
+.s-heading{font-size: 1.5em;}
+
+// buttons
+.btn{
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: .2em;
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: .3em .7em;
+    transition: all var(--transition-speed) ease-in-out;
+}
+
+.btn-primary{background-color: var(--primary-color);
+}
+.btn-primary:hover{
+    color: var(--primary-color);
+    background-color: $light-color;
+}
+
+// backgrounds
+.bg-dark{
+    background-color: #333;
+    color: #f4f4f4;
+}
+.bg-primary{
+    background-color: var(--primary-color);
+    color: #f4f4f4;
+}
+.bg-light{
+    color: #c0c0c0f5;
+    background-color:#f4f4f4;
+}
+.bg-footer{
+    background-color: #f8f8f8;
+    color: #1e2135;
+}
+
+// categories' colors
+.category{
+    display: inline-block;
+    font-size: .6em;
+    padding: .3em .45em;
+    margin: .5em 0;
+    border-radius: .8em;
+    text-transform: uppercase;
+    border: none;
+    color: #fff;
+    // this have to stand out over the overlay
+    // that's why they got a position and a z-index
+    position: relative;
+    z-index: 1;
+}
+.lifestyle-color{background-color:var(--lifestyle);}
+.game-color{background-color:var(--game);}
+.fashion-color{background-color:var(--fashion);}
+
+// paddings
+$values: (1, 2, 3);
+@each $value in $values {
+    .p-#{$value}{
+        padding: #{$value}em;
+    }
+    .py-#{$value}{
+        padding: #{$value}em 0;
+    }
+}
+
+.lead{
+    color: #fff;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+
+.bottom-line{
+    height: 3px;
+    width: 4em;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+}

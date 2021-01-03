@@ -1,0 +1,143 @@
+// SLIDERSHOW
+// a lot of features come with cycle2.js by Mark Aldrup
+
+// outer container
+.cycle-slideshow{
+    // this has a proprety of position set on relative by default
+    width: 60em;
+    height: 40em;
+    margin: 0 auto;
+    
+    // it containes images and text
+    .slide{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: .25em;
+
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: transform 1.6s cubic-bezier(.3, 1, .5, 1);
+        }
+        // the hover is outside the .item class
+
+        .slide-text{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            @include txt-bg(rgba(0, 0, 0, .7));
+            padding: 1em;
+            margin: 0;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 1.5s cubic-bezier(.3, 1, .5, 1), transform 1s cubic-bezier(.3, 1, .5, 1) ;
+        }
+        // the hover is outside the .item class
+    }
+    // arrows to change photos
+    .cycle-prev, .cycle-next{
+        position: absolute;
+        top: 40%;
+        cursor: pointer;
+        display: block;
+        @include txt-bg(rgba(0, 0, 0, .5));
+        padding: .6em;
+        z-index: 100;
+        opacity: 0;
+        transition: opacity 500ms;
+        
+    }
+    .cycle-next{
+        right: 0;
+    }
+
+    // the hoves are outside the .item class becuase if I put them under .item they would not work
+    &:hover .cycle-prev,
+    &:hover .cycle-next{
+        opacity: 1;
+    }
+
+    // these work either under .item and under .cycle-slideshow
+    &:hover img{transform: scale(1.1);}
+    &:hover .slide-text{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    // three bullet point
+    .cycle-pager{
+        position: absolute;
+        top: 20px;
+        z-index: 100;
+        width: 100%;
+        text-align: center;
+
+        // styling the bullet
+        // the trick here is to move the bullet outside the .slide class, which is set on overflow hidden
+        & span{
+            // this proprety hides the black tiny bullets
+            text-indent: 100em;
+            display: inline-block;
+            background-color: $medium-color;
+            margin: 0 .6em;
+            border-radius: 50%;
+            border: 1px $dark-color solid;
+            width: 10px;
+            height: 10px;
+            cursor: pointer;
+        }
+
+        .cycle-pager-active{
+            background-color: $dark-color;
+        }
+    }
+}
+
+// WIDESCREEN
+@media (max-width: 768px){
+
+    .cycle-slideshow{
+
+        width: 100%;
+        height: 50em;
+
+        .slide{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        // change from :hover to :focus
+        .cycle-prev, .cycle-next{
+            opacity: 1;
+        }
+        // these work either under .item and under .cycle-slideshow
+        &:focus img{transform: scale(1.1);}
+        &:focus .slide-text{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+// SMALL DEVICE
+@media (max-width: 500px){
+
+    .cycle-slideshow{
+
+        width: 100%;
+        height: 100%;
+
+        .slide{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+}
