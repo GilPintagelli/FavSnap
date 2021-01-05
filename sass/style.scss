@@ -293,13 +293,14 @@ figure{
 
         .form-group{
             width: 65%;
-            margin: 1.2em auto;
+            margin: 1.3em auto;
 
-            input[type]{
+
+            input{
                 width: 100%;
                 display: block;
                 padding: .25em 0;
-                margin-bottom: 2.2em;
+                // margin-bottom: 1.2em;
                 background: transparent;
                 border: none;
                 border-bottom: 2px solid var(--primary-color);
@@ -317,7 +318,28 @@ figure{
             label{
                 display: none;
             }
+
+            small{
+                display: block;
+                width: 100%;
+                text-align: left;
+                color: rgb(214, 54, 43);
+                visibility: hidden;
+            }
+
+            // I can't put this in utilities because it'd be override
+            // error and success classes
+            &.error input{
+                border-bottom: 2px solid rgb(214, 54, 43);
+            }
+            &.success input{
+                border-bottom: 2px solid rgb(5, 202, 5);
+            }
+            &.error small{
+                visibility: visible;
+            }
         }
+
 
         // subscribe button
         button{

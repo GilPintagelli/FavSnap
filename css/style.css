@@ -739,14 +739,13 @@ figure > figcaption {
 
 .wrapper form .form-group {
   width: 65%;
-  margin: 1.2em auto;
+  margin: 1.3em auto;
 }
 
-.wrapper form .form-group input[type] {
+.wrapper form .form-group input {
   width: 100%;
   display: block;
   padding: .25em 0;
-  margin-bottom: 2.2em;
   background: transparent;
   border: none;
   border-bottom: 2px solid var(--primary-color);
@@ -754,29 +753,49 @@ figure > figcaption {
   transition: border-color .3s;
 }
 
-.wrapper form .form-group input[type]:focus {
+.wrapper form .form-group input:focus {
   outline: none;
   border-bottom: 2px solid var(--secondary-color);
 }
 
-.wrapper form .form-group input[type]::-webkit-input-placeholder {
+.wrapper form .form-group input::-webkit-input-placeholder {
   font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper form .form-group input[type]:-ms-input-placeholder {
+.wrapper form .form-group input:-ms-input-placeholder {
   font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper form .form-group input[type]::-ms-input-placeholder {
+.wrapper form .form-group input::-ms-input-placeholder {
   font-family: 'Montserrat', sans-serif;
 }
 
-.wrapper form .form-group input[type]::placeholder {
+.wrapper form .form-group input::placeholder {
   font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper form .form-group label {
   display: none;
+}
+
+.wrapper form .form-group small {
+  display: block;
+  width: 100%;
+  text-align: left;
+  color: #d6362b;
+  visibility: hidden;
+}
+
+.wrapper form .form-group.error input {
+  border-bottom: 2px solid #d6362b;
+}
+
+.wrapper form .form-group.success input {
+  border-bottom: 2px solid #05ca05;
+}
+
+.wrapper form .form-group.error small {
+  visibility: visible;
 }
 
 .wrapper form button {
