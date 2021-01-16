@@ -1,8 +1,9 @@
 :root{
     box-sizing: border-box;
-    font-size: 1.1em;
-    font-family: 'Roboto', sans-serif;
+    font-size: 1.15em;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
     --primary-color:#f3a006;
     --secondary-color:#610061;
     --overlay-color: rgba(0, 0, 0, .45);
@@ -26,7 +27,6 @@
 
 /* core elements */
 body{
-    line-height: 1.6;
     background-color: $bg-main;
 }
 
@@ -36,7 +36,10 @@ a{
 
 ul{list-style: none;}
 
-p{margin: .8em 0;}
+p, figcaption{
+    margin: .8em 0;
+    line-height: 1.6;
+}
 
 
 @import './utilities';
@@ -44,23 +47,10 @@ p{margin: .8em 0;}
 
 /* HEADER */
 header{
-    background-color: var(--overlay-color);
+    background: linear-gradient(var(--overlay-color), var(--overlay-color)), url('../img/showcase-1.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 100vh;
     color: #fff;
-    position: relative;
-    // overflow-x: hidden;
-    // height: 80vh;
-    // he didn't put the height here because we need that to be aligned to y-axes, so we give to the .showcase-grid the height
-
-    &::before{
-        content: '';
-        background: url('../img/showcase-1.jpg') no-repeat center center/cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
 }
 
 
@@ -76,6 +66,7 @@ nav{
 .logo{
     letter-spacing: 2px;
     font-family: 'Raleway', sans-serif;
+    font-style: italic;
     font-size: 2rem;
     font-weight: 500;
     justify-self: start;
@@ -141,13 +132,7 @@ nav{
 
 /* toggle*/
 .toggle-btn{display: none;}
-// @media (max-width: 786px){
-//     .toggle-btn-visible{display: block;}
 
-//     .toggle-target-hidden{display: none;}
-
-//     .toggle-target-expanded{display: block;}
-// }
 
 /* showcase */
 .showcase-grid{
@@ -160,12 +145,15 @@ nav{
     /* padding: 4em 0; */
 }
 .showcase-content{
-    h2{
-        font-family: 'Lato', sans-serif;
+    h1{
         background: linear-gradient(to left, rgb(255, 255, 255), rgb(243, 160, 6));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+    
+    .main-btn{
+        margin-top: 1em;
     }
 }
 
@@ -186,6 +174,56 @@ nav{
 }
 
 
+// INTRO
+.section-intro{
+    @include txt-bg($bg-main);
+    text-align: center;
+
+    .m-heading{
+        font-weight: lighter;
+
+        span{
+            color: #f3a006;
+            font-weight: normal;
+            font-style: italic;
+        }
+    }
+
+    .slogan{
+        margin-bottom: 3em;
+        font-size: 1.1em;
+    }
+
+    .intro-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2em;
+    }
+
+    .box-intro{
+        margin: 1em;
+
+        & > div{position: relative;}
+        .number{
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #3cbebe;
+            border-radius: 50%;
+        }
+        
+        img{
+            height: 10em;
+            width: auto;
+            margin: .5em;
+        }
+    }
+}
+
+
 /* Photos section */
 figure{
     & > img{width: 100%;}
@@ -193,8 +231,6 @@ figure{
     & > div{padding: .8em}
     
     & > figcaption{
-        font-style: italic;
-        font-family: 'Lato', sans-serif;
         color: #1e2135;
     }
 } 
@@ -222,25 +258,14 @@ figure{
     }
 }
 
+.card__detail{width: 100%}
+
 @import './photo-grid';
 
 
 /* daily photo */
 .daily-photo{
-    --overlay-color: rgba(0, 0, 0, .45);
-    background-color: var(--overlay-color);
-    position: relative;
-
-    &::after{
-        content: '';
-        background: #f4f4f4 url('../img/bg-image.jpg') no-repeat center center/cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-    }
+    background: linear-gradient(rgba(30, 33, 53, 1), rgba(24, 26, 42, .65)), url('../img/bg-image.jpg') no-repeat center center/cover;
 }
 
 
@@ -258,6 +283,7 @@ figure{
     animation: wrapper .5s ease;
     // opacity: 0;
     // transition: opacity .4s ease-in;
+
     @keyframes wrapper {
         from{
             opacity: 0;
@@ -283,7 +309,7 @@ figure{
 
         .text-logo{
             text-align: center;
-            font-weight: lighter;
+            font-weight: 500;
             font-size: 1.2em;
             color: #6a737d;
         }
@@ -309,9 +335,6 @@ figure{
                 &:focus{
                     outline: none;
                     border-bottom: 2px solid var(--secondary-color);
-                }
-                &::placeholder{
-                    font-family: 'Montserrat', sans-serif;
                 }
             }
 

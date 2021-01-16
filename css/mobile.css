@@ -56,14 +56,20 @@
 
 .l-heading {
   font-size: 3em;
+  margin-bottom: 1em;
 }
 
 .m-heading {
-  font-size: 2.5em;
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 1.7em;
 }
 
 .s-heading {
   font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 1.3em;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -196,25 +202,38 @@ nav .menu {
       justify-self: center;
 }
 
+.sticky {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+
 .showcase-grid {
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   padding: 0 2em;
-  height: 100vh;
 }
 
 .showcase-grid .showcase-content {
   text-align: center;
 }
 
-.showcase-grid .showcase-content a {
+.showcase-grid .showcase-content p {
+  line-height: 1.8;
+}
+
+.showcase-grid .showcase-content .main-btn {
   text-align: center;
   display: block;
   width: 50%;
   margin: 0 auto;
+  margin-top: 2.5em;
+  padding: .5em 0;
 }
 
-.showcase-grid .showcase-content a a:focus {
+.showcase-grid .showcase-content .main-btn .main-btn:focus {
   background-color: #e69603;
 }
 
@@ -302,6 +321,10 @@ nav .menu {
     padding: .5em;
     margin: 0 1.2em;
     border-radius: .3em;
+  }
+  .section-intro .intro-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .photo-grid {
     -ms-grid-columns: 1fr;

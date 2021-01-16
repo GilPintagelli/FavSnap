@@ -46,9 +46,21 @@
     font-weight: 500;
 }
 
-.l-heading{font-size: 3em;}
-.m-heading{font-size: 2.5em;}
-.s-heading{font-size: 1.5em;}
+.l-heading{
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+.m-heading{
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 1.7em;
+}
+.s-heading{
+    font-size: 1.5em;
+    font-weight: 100;
+    margin-bottom: 1.3em;
+    text-transform: uppercase;
+}
 
 // buttons
 .btn{

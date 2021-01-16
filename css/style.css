@@ -1,9 +1,10 @@
 :root {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: 1.1em;
-  font-family: 'Roboto', sans-serif;
+  font-size: 1.15em;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
   --primary-color:#f3a006;
   --secondary-color:#610061;
   --overlay-color: rgba(0, 0, 0, .45);
@@ -26,7 +27,6 @@
 
 /* core elements */
 body {
-  line-height: 1.6;
   background-color: #1e2135;
 }
 
@@ -38,8 +38,9 @@ ul {
   list-style: none;
 }
 
-p {
+p, figcaption {
   margin: .8em 0;
+  line-height: 1.6;
 }
 
 /* Modal */
@@ -96,14 +97,20 @@ p {
 
 .l-heading {
   font-size: 3em;
+  margin-bottom: 1em;
 }
 
 .m-heading {
-  font-size: 2.5em;
+  font-size: 2em;
+  font-weight: 400;
+  margin-bottom: 1.7em;
 }
 
 .s-heading {
   font-size: 1.5em;
+  font-weight: 100;
+  margin-bottom: 1.3em;
+  text-transform: uppercase;
 }
 
 .btn {
@@ -214,20 +221,11 @@ p {
 
 /* HEADER */
 header {
-  background-color: var(--overlay-color);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--overlay-color)), to(var(--overlay-color))), url("../img/showcase-1.jpg") no-repeat center center/cover;
+  background: linear-gradient(var(--overlay-color), var(--overlay-color)), url("../img/showcase-1.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  height: 100vh;
   color: #fff;
-  position: relative;
-}
-
-header::before {
-  content: '';
-  background: url("../img/showcase-1.jpg") no-repeat center center/cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
 }
 
 /* navbar*/
@@ -246,6 +244,7 @@ nav {
 .logo {
   letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
+  font-style: italic;
   font-size: 2rem;
   font-weight: 500;
   -ms-grid-column-align: start;
@@ -338,13 +337,16 @@ nav {
   /* padding: 4em 0; */
 }
 
-.showcase-content h2 {
-  font-family: 'Lato', sans-serif;
+.showcase-content h1 {
   background: -webkit-gradient(linear, right top, left top, from(white), to(#f3a006));
   background: linear-gradient(to left, white, #f3a006);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.showcase-content .main-btn {
+  margin-top: 1em;
 }
 
 /*chevron*/
@@ -367,6 +369,60 @@ nav {
   color: var(--primary-color);
 }
 
+.section-intro {
+  background-color: #1e2135;
+  color: #f4f4f4;
+  text-align: center;
+}
+
+.section-intro .m-heading {
+  font-weight: lighter;
+}
+
+.section-intro .m-heading span {
+  color: #f3a006;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.section-intro .slogan {
+  margin-bottom: 3em;
+  font-size: 1.1em;
+}
+
+.section-intro .intro-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+}
+
+.section-intro .box-intro {
+  margin: 1em;
+}
+
+.section-intro .box-intro > div {
+  position: relative;
+}
+
+.section-intro .box-intro .number {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #3cbebe;
+  border-radius: 50%;
+}
+
+.section-intro .box-intro img {
+  height: 10em;
+  width: auto;
+  margin: .5em;
+}
+
 /* Photos section */
 figure {
   /* figure > img{width: 15em;} */
@@ -381,8 +437,6 @@ figure > div {
 }
 
 figure > figcaption {
-  font-style: italic;
-  font-family: 'Lato', sans-serif;
   color: #1e2135;
 }
 
@@ -420,6 +474,10 @@ figure > figcaption {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.card__detail {
+  width: 100%;
 }
 
 .photo-grid > *:nth-child(2) {
@@ -526,20 +584,8 @@ figure > figcaption {
 
 /* daily photo */
 .daily-photo {
-  --overlay-color: rgba(0, 0, 0, .45);
-  background-color: var(--overlay-color);
-  position: relative;
-}
-
-.daily-photo::after {
-  content: '';
-  background: #f4f4f4 url("../img/bg-image.jpg") no-repeat center center/cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1e2135), to(rgba(24, 26, 42, 0.65))), url("../img/bg-image.jpg") no-repeat center center/cover;
+  background: linear-gradient(#1e2135, rgba(24, 26, 42, 0.65)), url("../img/bg-image.jpg") no-repeat center center/cover;
 }
 
 .cycle-slideshow {
@@ -732,7 +778,7 @@ figure > figcaption {
 
 .wrapper .logo .text-logo {
   text-align: center;
-  font-weight: lighter;
+  font-weight: 500;
   font-size: 1.2em;
   color: #6a737d;
 }
@@ -756,22 +802,6 @@ figure > figcaption {
 .wrapper form .form-group input:focus {
   outline: none;
   border-bottom: 2px solid var(--secondary-color);
-}
-
-.wrapper form .form-group input::-webkit-input-placeholder {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.wrapper form .form-group input:-ms-input-placeholder {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.wrapper form .form-group input::-ms-input-placeholder {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.wrapper form .form-group input::placeholder {
-  font-family: 'Montserrat', sans-serif;
 }
 
 .wrapper form .form-group label {

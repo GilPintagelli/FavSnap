@@ -21,22 +21,34 @@ nav{
         justify-self: center;
     }
 }
+// sticky navigation
+.sticky{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
 // SHOWCASE
 .showcase-grid{
     grid-template-columns: 1fr;
     padding: 0 2em;
-    height: 100vh;
 
     .showcase-content{
         text-align: center;
 
-        a{
+        p{line-height: 1.8;}
+
+        .main-btn{
             text-align: center;
             display: block;
             width: 50%;
             margin: 0 auto;
+            margin-top: 2.5em;
+            padding: .5em 0;
 
-            a:focus{
+            .main-btn:focus{
                 background-color: #e69603;
             }
         }
@@ -44,6 +56,9 @@ nav{
 
     .click{display: none;}
 }
+// INTRO
+
+
 // LATEST
 .photo-grid{
     grid-template-columns: repeat(2, 1fr);
@@ -125,6 +140,14 @@ nav{
         padding: .5em;
         margin: 0 1.2em;
         border-radius: .3em;
+    }
+
+    // INTRO
+    .section-intro{
+        
+        .intro-grid{
+            grid-template-columns: 1fr;
+        }
     }
 
     // LATEST
