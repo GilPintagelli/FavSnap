@@ -9,7 +9,6 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 
 
-
 // EVENTS
 // MODAL
 // open the modal
@@ -67,3 +66,39 @@ function showSuccess(input){
     const formGroup = input.parentElement;
     formGroup.className = 'form-group success';
 }
+
+
+// jQuery --- scroll and sticky nav
+$(document).ready(function(){
+
+    // SCROLL
+    $("a").click(function(event) {
+    
+        // this.hash reads the href attribute of this (a), and gets the part of the URL beginning with # (and are not empty!)
+        // hash is the "location proprety" in DOM. Basically it says, "find me all the anchor tags in the DOM that bigin with a number-sign(#) and have content"
+        if (this.hash !== "") {
+            event.preventDefault();
+        
+            var hash = this.hash;
+
+            $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+            }, 1000, function(){
+    
+            window.location.hash = hash;
+            });
+        }
+    });
+
+    // STICKY NAV
+    $('.section-intro').waypoint(function(direction) {
+
+        if( direction == 'down'){
+            $('nav').addClass('sticky');
+        } else {
+            $('nav').removeClass('sticky');
+        }
+    }, {
+        offset: '10%;'
+    });
+});

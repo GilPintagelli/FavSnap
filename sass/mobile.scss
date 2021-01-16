@@ -28,8 +28,17 @@ nav{
     left: 0;
     top: 0;
     z-index: 100;
+    background-color: #6576A6;
 }
+.sticky .toggle-btn-visible{
+    position: static;
+}
+.sticky .menu{
+    position: static;
+    grid-column-start: -2;
+    grid-column-end: -1;
 
+}
 // SHOWCASE
 .showcase-grid{
     grid-template-columns: 1fr;
@@ -40,7 +49,7 @@ nav{
 
         p{line-height: 1.8;}
 
-        .main-btn{
+        .main-btn:link, .main-btn:visited{
             text-align: center;
             display: block;
             width: 50%;
@@ -48,7 +57,7 @@ nav{
             margin-top: 2.5em;
             padding: .5em 0;
 
-            .main-btn:focus{
+            .main-btn:focus, .main-btn:active{
                 background-color: #e69603;
             }
         }
@@ -94,10 +103,6 @@ nav{
             cursor: pointer;
             color: $light-color;
             transition: color .3s ease;
-            
-            &:hover{
-                color: var(--primary-color);
-            }
         }    
         
         .toggle-target-hidden{display: none;}
@@ -112,8 +117,6 @@ nav{
         }
         
         .menu{
-            // grid-column: 1 / -1;
-            // justify-self: flex-end;
             position: absolute;
             top: 50px;
             right: 20px;
@@ -129,8 +132,6 @@ nav{
             & a{border: none;}
             & a:hover{
                 border: none;
-
-                // i{opacity: 1;}
             }
         }
     }

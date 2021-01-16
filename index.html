@@ -4,7 +4,7 @@
     <!-- meta tags -->
     <meta charset="UTF-8" />
     <meta name="description" content="Hi! I'm Luigi and this is a semple website called FavSnap" />
-    <meta name="keywords" content="photo, photos, snapshot snapshots, social media, share photos, webpage, website" />
+    <meta name="keywords" content="photo, photos, snapshot, snapshots, social media, share photos, webpage, website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- google fonts -->
@@ -61,7 +61,7 @@
                         <small>error</small>
                     </div>
         
-                    <button class="btn" type="submit" value="Subscribe">Subscribe</button>
+                    <button type="submit" value="Subscribe">Subscribe</button>
         
                     <div>
                         <div></div>
@@ -81,7 +81,7 @@
         <!-- header -->
         <header id="showcase" tabindex="1">
 
-            <nav class="container-l" role="navigation">
+            <nav class="container-l">
 
                 <h1 class="logo">Fav<span class="text-primary">Snap<i class="fas fa-image"></i></span></h1>
 
@@ -122,14 +122,14 @@
 
 
         <!-- Section: INTRO -->
-        <section class="section-intro container-m p-3">
+        <section class="section-intro container-m p-3" tabindex="2">
 
             <h2 class="m-heading">It's very <span>simple</span></h2>
             <p class="slogan">FavSnap is a place where you can share your memories and favorite moments with a click</p>
             
             <div class="intro-grid">
 
-                <div class="box-intro">
+                <div class="box-intro" data-aos="fade-in" data-aos-easing="ease-in">
                     <div>
                         <div class="number">1</div>
                         <h3 class="s-heading">Take a snap</h3>
@@ -139,7 +139,7 @@
                     <p>Photos are funny and simple. Don't worry about adding effects. You can always do that here</p>
                 </div>
 
-                <div class="box-intro">
+                <div class="box-intro" data-aos="fade-in" data-aos-easing="ease-in">
                     <div>
                         <div class="number">2</div>
                         <h3 class="s-heading">You like it?</h3>
@@ -150,7 +150,7 @@
                     <p>We all are curious to see what it looks like. You know, it may be a hit</p>
                 </div>
 
-                <div class="box-intro">
+                <div class="box-intro" data-aos="fade-in" data-aos-easing="ease-in">
                     <div>
                         <div class="number">3</div>
                         <h3 class="s-heading">Share it</h3>
@@ -164,7 +164,7 @@
         </section>
 
         <!-- Section: "LATEST" -->
-        <section id="latest" class="container-m py-3" tabindex="2">
+        <section id="latest" class="container-m" tabindex="3">
 
             <h2 class="section-title">Latest Snapshots</h2>
             <div class="bottom-line"></div>
@@ -237,7 +237,7 @@
         </section>
 
         <!-- Section: "DAILY PHOTOS" -->
-        <section id="daily-photos" class="daily-photo py-3" tabindex="3">
+        <section id="daily-photos" class="daily-photo py-2" tabindex="4">
             <div class="container-m">
 
                 <h2 class="section-title">Daily Photos</h2>
@@ -287,7 +287,7 @@
 
     </main>
     
-    <footer id="main-footer" class="main-footer bg-footer" tabindex="4">
+    <footer id="main-footer" class="main-footer bg-footer" tabindex="5">
 
         <div class="top">
             <a href="#home" rel="noopener noreferrer">Go to the Top!</a>
@@ -335,12 +335,18 @@
     <!-- Ionicons script -->
     <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
 
-    <!-- Modal script -->
-    <script src="js/app.js"></script>
+    <!-- jQuery script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- scoll from waypoints -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    
     <!-- AOS scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
+
+    <!-- Modal script -->
+    <script src="js/app.js"></script>
 
 </body>
 

@@ -46,10 +46,11 @@
 }
 
 .section-title {
-  color: #ebc313;
+  color: var(--primary-color);
   text-align: center;
   font-size: 1.8em;
-  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+  font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-weight: 500;
 }
@@ -72,7 +73,7 @@
   text-transform: uppercase;
 }
 
-.btn {
+.btn:link, .btn:visited {
   display: inline-block;
   cursor: pointer;
   border: none;
@@ -84,11 +85,11 @@
   transition: all var(--transition-speed) ease-in-out;
 }
 
-.btn-primary {
+.btn-primary:link, .btn-primary:visited {
   background-color: var(--primary-color);
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active {
   color: var(--primary-color);
   background-color: #f4f4f4;
 }
@@ -165,17 +166,9 @@
 .lead {
   color: #fff;
   margin-bottom: 1em;
-  font-size: 1.2em;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 200;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   text-align: center;
-}
-
-.bottom-line {
-  height: 3px;
-  width: 4em;
-  background-color: var(--secondary-color);
-  margin: 0 auto;
 }
 
 nav {
@@ -208,6 +201,18 @@ nav .menu {
   left: 0;
   top: 0;
   z-index: 100;
+  background-color: #6576A6;
+}
+
+.sticky .toggle-btn-visible {
+  position: static;
+}
+
+.sticky .menu {
+  position: static;
+  -ms-grid-column: -2;
+      grid-column-start: -2;
+  grid-column-end: -1;
 }
 
 .showcase-grid {
@@ -224,7 +229,7 @@ nav .menu {
   line-height: 1.8;
 }
 
-.showcase-grid .showcase-content .main-btn {
+.showcase-grid .showcase-content .main-btn:link, .showcase-grid .showcase-content .main-btn:visited {
   text-align: center;
   display: block;
   width: 50%;
@@ -233,7 +238,7 @@ nav .menu {
   padding: .5em 0;
 }
 
-.showcase-grid .showcase-content .main-btn .main-btn:focus {
+.showcase-grid .showcase-content .main-btn:link .main-btn:focus, .showcase-grid .showcase-content .main-btn:link .main-btn:active, .showcase-grid .showcase-content .main-btn:visited .main-btn:focus, .showcase-grid .showcase-content .main-btn:visited .main-btn:active {
   background-color: #e69603;
 }
 
@@ -282,9 +287,6 @@ nav .menu {
     color: #f4f4f4;
     -webkit-transition: color .3s ease;
     transition: color .3s ease;
-  }
-  nav .toggle-btn-visible:hover {
-    color: var(--primary-color);
   }
   nav .toggle-target-hidden {
     display: none;
