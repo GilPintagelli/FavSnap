@@ -46,7 +46,10 @@ p, figcaption{
 
 /* HEADER */
 header{
-    background: linear-gradient(var(--overlay-color), var(--overlay-color)), url('../img/showcase-1.jpg') no-repeat center center/cover;
+    background: linear-gradient(var(--overlay-color), var(--overlay-color)), url('../img/showcase-1-min.jpg') no-repeat;
+    background-position: center;
+    // instead of background-size: cover let's try 100vw auto becuse the image stretches on mobile device;
+    background-size: cover;
     background-attachment: fixed;
     height: 100vh;
     color: #fff;
@@ -264,7 +267,7 @@ figure{
 
 /* daily photo */
 .daily-photo{
-    background: linear-gradient(rgba(30, 33, 53, 1), rgba(24, 26, 42, .65)), url('../img/bg-image.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(30, 33, 53, 1), rgba(24, 26, 42, .65)), url('../img/bg-image-min.jpg') no-repeat center center/cover;
 }
 
 
@@ -369,6 +372,7 @@ figure{
             display: block;
             width: 80%;
             margin: 0 auto;
+            cursor: pointer;
             padding: .5em;
             border-radius: 1em;
             font-size: 1em;

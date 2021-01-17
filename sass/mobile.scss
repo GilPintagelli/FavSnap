@@ -6,6 +6,10 @@
 @import './config';
 @import './utilities';
 
+header{
+    background-size: 300vw auto;
+}
+
 nav{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -27,7 +31,7 @@ nav{
     right: 0;
     left: 0;
     top: 0;
-    z-index: 100;
+    z-index: 200;
     background-color: #6576A6;
 }
 .sticky .toggle-btn-visible{
@@ -37,7 +41,7 @@ nav{
     position: static;
     grid-column-start: -2;
     grid-column-end: -1;
-
+    z-index: 200;
 }
 // SHOWCASE
 .showcase-grid{
@@ -138,7 +142,7 @@ nav{
     
     .card{
         @include txt-bg(transparent);
-        padding: .5em;
+        // padding: .5em;
         margin: 0 1.2em;
         border-radius: .3em;
     }

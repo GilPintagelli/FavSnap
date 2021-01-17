@@ -74,7 +74,7 @@ $(document).ready(function(){
     // SCROLL
     $("a").click(function(event) {
     
-        // this.hash reads the href attribute of this (a), and gets the part of the URL beginning with # (and are not empty!)
+        // this.hash reads the href attribute of "this" (a), and gets the part of the URL beginning with # (that are not empty!)
         // hash is the "location proprety" in DOM. Basically it says, "find me all the anchor tags in the DOM that bigin with a number-sign(#) and have content"
         if (this.hash !== "") {
             event.preventDefault();
