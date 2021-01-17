@@ -228,7 +228,12 @@ nav{
 
 /* Photos section */
 figure{
-    & > img{width: 100%;}
+    a{width: 100%;}
+
+    img{
+        width: 100%;
+        display: block;
+    }
     /* figure > img{width: 15em;} */
     & > div{padding: .8em}
     
