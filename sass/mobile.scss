@@ -6,10 +6,6 @@
 @import './config';
 @import './utilities';
 
-header{
-    background-size: 400vw auto;
-}
-
 nav{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
