@@ -1,75 +1,7 @@
-:root{
-    box-sizing: border-box;
-    font-size: 1.15em;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
-    // scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
-    --primary-color:#f3a006;
-    --secondary-color:#610061;
-    --overlay-color: rgba(0, 0, 0, .45);
-    --icon-color:#fff;
-    --transition-speed: 300ms;
-}
-
-.category{
-    --lifestyle: #ebc313;
-    --game: #4682b4;
-    --fashion: #8847d1;
-}
-
-*, :before, :after{
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
 
 @import './config';
-
-/* core elements */
-// these two ways should fix the background-attachment issue on mobile;
-body{
-    background-color: $bg-main;
-    // background: linear-gradient(var(--overlay-color), var(--overlay-color)), url('../img/showcase-1-min.jpg') no-repeat;
-    // background-position: center;
-    // background-size: cover;
-    // width: 100%;
-    // height: 100%;
-    // background-attachment: fixed;
-}
-
-// OR
-
-// body::before {
-//     content: "";
-//     display: block;
-//     position: fixed;
-//     background-color: $bg-main;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     z-index: -10;
-//     background: linear-gradient(var(--overlay-color), var(--overlay-color)), url('../img/showcase-1-min.jpg') no-repeat;
-//     background-position: center;
-//     background-size: cover;
-//     -webkit-background-size: cover;
-//     -moz-background-size: cover;
-//     -o-background-size: cover;
-// }
-
-a{
-    text-decoration: none;
-}
-
-ul{list-style: none;}
-
-p, figcaption{
-    margin: .8em 0;
-    line-height: 1.6;
-}
-
+@import './base';
 @import './utilities';
-
 
 /* HEADER */
 // this way the image scale on mobile when scrolling because the bg-attachment has been desabled on mobile
@@ -133,6 +65,23 @@ nav{
         opacity: 1;
     }
 }
+@media (max-width: 850px){
+    nav{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+        .logo{
+            justify-self: center;
+        }
+    
+        .social{display: none;}
+    
+        .menu{
+            align-items: center;
+            justify-self: center;
+        }
+    }
+}
 
 /* menu */
 .menu{
@@ -154,14 +103,15 @@ nav{
         border: 1px solid var(--primary-color);
         color: var(--primary-color);
     }
-    /* menu icons */
-    & a i{
-        display: none;
-        margin-right: .5em;
-        opacity: 0;
-        color: #f4f4f4;
-        transition: opacity .6s, color 2s;
-    }
+
+}
+/* menu icons */
+.menu-icons{
+    display: none;
+    margin-right: .5em;
+    opacity: 0;
+    color: #f4f4f4;
+    transition: opacity .6s, color 2s;
 }
 
 /* toggle*/
@@ -185,28 +135,28 @@ nav{
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-    
-    .main-btn{
-        margin-top: 1em;
-    }
 }
 
 /*chevron*/
 .click{
-    display: block;
-    position: relative;
-    right: 16px;
-    width: 100%;
-    margin: auto auto 0;
-    padding: 1em 0;
-
-    & .fa-chevron-down{
+    &:link, &:visited{
+        display: block;
+        position: relative;
+        right: 16px;
+        width: 100%;
+        margin: auto auto 0;
+        padding: 1em 0;
         color: var(--icon-color);
         transition: all var(--transition-speed) ease-in;
     }
-    & .fa-chevron-down:hover{ color: var(--primary-color);}
-}
 
+    &:hover{
+        transform: translateY(-3px);
+        color: var(--primary-color);
+    }
+
+    &:active{ transform: translateY(2px); }
+}
 
 // INTRO
 .section-intro{
@@ -234,25 +184,37 @@ nav{
         gap: 2em;
     }
 
-    .box-intro{
-        margin: 2.2em .8em;
+}
 
-        & > div{position: relative;}
-        .number{
-            position: absolute;
-            top: -10px;
-            left: 0;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            background-color: #3cbebe;
-            border-radius: 50%;
-        }
-        
-        img{
-            height: 10em;
-            width: auto;
-            margin: .5em;
+.box-intro{
+    margin: 2.2em .8em;
+
+    & > div{position: relative;}
+    
+    .number{
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background-color: #3cbebe;
+        border-radius: 50%;
+    }
+    
+    img{
+        height: 10em;
+        width: auto;
+        margin: .5em;
+    }
+}
+@media (max-width: 850px){
+    .section-intro{
+
+        .intro-grid{
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2em;
         }
     }
 }
@@ -260,22 +222,38 @@ nav{
 
 /* LATEST */
 
-.latest{background-color:  $bg-main;}
+// .latest{background-color:  $bg-main;}
 
 figure{
-    a{width: 100%;}
+
+    a{
+        width: 100%;
+        overflow: hidden;
+    }
 
     img{
         width: 100%;
         display: block;
     }
-    /* figure > img{width: 15em;} */
-    & > div{padding: .8em}
     
-    & > figcaption{
-        color: #1e2135;
+    span{
+        display: block;
+    }
+
+    figcaption{
+        padding: .8em;
     }
 } 
+
+.img--animation{
+    // background-color: #333;
+    transition: all .4s;
+
+    &:hover{
+        opacity: .8;
+        transform: scale(1.1);
+    }
+}
 
 .photo-grid{
     display: grid;
@@ -317,14 +295,12 @@ figure{
 /* form */
 .wrapper{
     max-width: 350px;
-    margin: 100px auto;
+    margin: 60px auto;
     overflow: hidden;
     background-color: #f4f4f4;
     color: #6a737d;
     border-radius: .3em;
     animation: wrapper .5s ease;
-    // opacity: 0;
-    // transition: opacity .4s ease-in;
 
     @keyframes wrapper {
         from{
@@ -357,118 +333,112 @@ figure{
         }
     }
 
-    form{
+    .form-group{
+        width: 65%;
+        margin: 1.3em auto;
+    }
 
-        .form-group{
-            width: 65%;
-            margin: 1.3em auto;
+    input{
+        width: 100%;
+        display: block;
+        padding: .25em 0;
+        // margin-bottom: 1.2em;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid var(--primary-color);
+        transition: border-color .3s;
 
-
-            input{
-                width: 100%;
-                display: block;
-                padding: .25em 0;
-                // margin-bottom: 1.2em;
-                background: transparent;
-                border: none;
-                border-bottom: 2px solid var(--primary-color);
-                transition: border-color .3s;
-
-                &:focus{
-                    outline: none;
-                    border-bottom: 2px solid var(--secondary-color);
-                }
-            }
-
-            label{
-                display: none;
-            }
-
-            small{
-                display: block;
-                width: 100%;
-                text-align: left;
-                color: rgb(214, 54, 43);
-                visibility: hidden;
-            }
-
-            // I can't put this in utilities because it'd be override
-            // error and success classes
-            &.error input{
-                border-bottom: 2px solid rgb(214, 54, 43);
-            }
-            &.success input{
-                border-bottom: 2px solid rgb(5, 202, 5);
-            }
-            &.error small{
-                visibility: visible;
-            }
+        &:focus{
+            outline: none;
+            border-bottom: 2px solid var(--secondary-color);
         }
+    }
 
+    label{
+        display: none;
+    }
 
-        // subscribe button
-        button{
-            letter-spacing: 1.3px;
-            display: block;
+    small{
+        display: block;
+        width: 100%;
+        text-align: left;
+        color: rgb(214, 54, 43);
+        visibility: hidden;
+    }
+
+    // I can't put this in utilities because it'd be override
+    // error and success classes
+    .error input{
+        border-bottom: 2px solid rgb(214, 54, 43);
+    }
+    .success input{
+        border-bottom: 2px solid rgb(5, 202, 5);
+    }
+    .error small{
+        visibility: visible;
+    }
+
+    // subscribe button
+    button{
+        letter-spacing: 1.3px;
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+        cursor: pointer;
+        padding: .5em;
+        border-radius: 1em;
+        font-size: 1em;
+        color: #f4f4f4;
+        border: none;
+        background: linear-gradient(to right, #ffd700, #f3a006, #610061);
+    }
+
+    // line and sign in
+    div{
+        text-align: center;
+
+        div{
+            position: relative;
+            top: 28px;
             width: 80%;
             margin: 0 auto;
-            cursor: pointer;
-            padding: .5em;
-            border-radius: 1em;
-            font-size: 1em;
-            color: #f4f4f4;
-            border: none;
-            background: linear-gradient(to right, #ffd700, #f3a006, #610061);
+            height: 1px;
+            background-color: #b1b6bd;
         }
 
-        // line and sign in
-        div{
+        p{
+            position: relative;
+            display: inline-block;
+            padding: 0 .5em;
+            z-index: 1;
             text-align: center;
-
-            div{
-                position: relative;
-                top: 28px;
-                width: 80%;
-                margin: 0 auto;
-                height: 1px;
-                background-color: #b1b6bd;
-            }
-
-            p{
-                position: relative;
-                display: inline-block;
-                padding: 0 .5em;
-                z-index: 1;
-                text-align: center;
-                background-color: #f4f4f4;
-            }
-
+            background-color: #f4f4f4;
         }
-
-        .google,.twitter{
-            display: block;
-            width: 70%;
-            margin: 1em auto;
-            background-color: #1e2135;
-            text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-weight: 600;
-            padding: .55em .7em;
-            transition: none;
-
-            i{margin-right: .5em;}
-        }
-        .google{background-color: #1e2135;}
-        .twitter{background-color: #00acee;}
 
     }
-    & footer{
-        p {text-align: center;}
-        a{
-            color: var(--primary-color);
-            &:hover{
-                color: var(--secondary-color);
-            }
+}
+
+.google:link,.twitter:link{
+    display: block;
+    width: 70%;
+    margin: 1em auto;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    padding: .55em .7em;
+    transition: none;
+
+    i{margin-right: .5em;}
+}
+.google{background-color: #1e2135;}
+.twitter{background-color: #00acee;}
+
+.footer-form{
+    p {text-align: center;}
+    a{
+        color: var(--primary-color);
+        &:hover{
+            color: var(--secondary-color);
         }
     }
 }
@@ -534,10 +504,12 @@ footer{
         box-sizing: content-box;
 
         img{
+            box-sizing: border-box;
             margin-top: 1em;
-            width: 105px;
-            height: 105px;
+            width: 110px;
+            height: 110px;
             border-radius: 50%;
+            padding: .4em;
             border: dashed 3px var(--primary-color);
             opacity: 1;
             transition: opacity .2s ease-in;

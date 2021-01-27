@@ -18,6 +18,8 @@ $font-weight: (
     'bold': 800
 );
 
+// paddings
+$values: (1, 2, 3);
 
 // set text color
 @function text-color($color){

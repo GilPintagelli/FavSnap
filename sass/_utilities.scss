@@ -33,6 +33,8 @@
 
 .card{
     @include txt-bg($light-color);
+    border-radius: .2em;
+    overflow: hidden;
 }
 
 .text-primary{color: var(--primary-color);}
@@ -64,22 +66,35 @@
 }
 
 // buttons
-.btn:link, .btn:visited{
-    display: inline-block;
-    cursor: pointer;
-    border: none;
-    border-radius: .2em;
-    background-color: var(--dark-color);
-    color: #fff;
-    padding: .5em 2.5em;
-    transition: all var(--transition-speed) ease-in-out;
+.btn{
+    &:link, &:visited{
+        display: inline-block;
+        cursor: pointer;
+        border: none;
+        border-radius: .2em;
+        color: #fff;
+        padding: .5em 2.5em;
+        margin-top: 2em;
+        transition: all var(--transition-speed) ease-in-out;
+    }
 }
 
-.btn-primary:link, .btn-primary:visited{background-color: var(--primary-color);
+.btn--color{
+    &:link, &visited{
+        background-color: var(--primary-color);
+    }
+
+    &:hover, &:active{
+        background-color: #e29404;
+    }
 }
-.btn-primary:hover, .btn-primary:active{
-    color: var(--primary-color);
-    background-color: $light-color;
+
+.btn--animated{
+    transition: transform .2s;
+
+    &:hover{
+        transform: scale(1.15);
+    }
 }
 
 // backgrounds
@@ -120,7 +135,6 @@
 .fashion-color{background-color:var(--fashion);}
 
 // paddings
-$values: (1, 2, 3);
 @each $value in $values {
     .p-#{$value}{
         padding: #{$value}em;

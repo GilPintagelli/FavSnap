@@ -4,7 +4,7 @@
     <!-- meta tags -->
     <meta charset="UTF-8" />
     <meta name="author" content="Luigi Pignatelli (GilPintagelli)" />
-    <meta name="description" content="Hi! I'm Luigi and this is a semple website called FavSnap" />
+    <meta name="description" content="Hi! I'm Luigi and this is a sample website called FavSnap" />
     <meta name="keywords" content="photo, photos, snapshot, snapshots, social media, share photos, webpage, website" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -21,7 +21,7 @@
     <!-- CSS stylesheets -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/lightbox.css" />
-    <link rel="stylesheet" media="screen and (max-width: 795px)" href="css/mobile.css" />
+    <link rel="stylesheet" media="screen and (max-width: 800px)" href="css/mobile.css" />
 
     <!-- JS and jQuery script -->
     <script type="text/javascript" src="./js/jquery.js"></script>
@@ -72,7 +72,7 @@
                     <a href="https://twitter.com/login?lang=en-gb" class="btn twitter"><i class="fab fa-twitter"></i> Twitter account</a>
                 </form>
         
-                <footer>
+                <footer class="footer-form">
                     <p>Already have an account? <a href="#">Click here!</a></p>
                 </footer>
         
@@ -98,9 +98,9 @@
                 </span>
 
                 <ul class="menu">
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#latest"><i class="fas fa-bell"></i> Latest</a></li>
-                    <li><a href="#daily-photos"><i class="fas fa-camera"></i> Daily</a></li>
+                    <li><a href="#home"><i class="fas fa-home menu-icons"></i> <span>Home</span> </a></li>
+                    <li><a href="#latest"><i class="fas fa-bell menu-icons"></i> Latest</a></li>
+                    <li><a href="#daily-photos"><i class="fas fa-camera menu-icons"></i> Daily</a></li>
                 </ul>
             </nav>
 
@@ -111,7 +111,8 @@
 
                     <h1 class="l-heading">Share Your <span class="text-primary">Experience</span></h1>
                     <p>This is a sample website made of HTML, CSS, SASS and a bit of JS. I wanted this demo to resemble a social webpage where people share their pics</p>
-                    <a href="#" class="main-btn btn btn-primary btn-block">I'm in!</a>
+
+                    <a href="#" class="btn btn--color btn--animated btn--mobile">I'm in!</a>
 
                 </div>
                 
@@ -169,22 +170,23 @@
         </section>
 
         <!-- Section: "LATEST" -->
-        <section class="latest" tabindex="3">
+        <section id="latest" class="latest" tabindex="3">
             <div class="container-m">
 
                 <h2 class="section-title">Latest Snapshots</h2>
-                <div class="bottom-line"></div>
+                <p class="lead">These images are clickable so that you can have a better look</p>
     
                 <div class="photo-grid py-3">
                     
                     <figure class="card">
-                        <a href="./img/lifestyle-3.jpg" data-lightbox="mine"><img src="./img/lifestyle-3.jpg" alt="lifestyle-photo"></a>
+                        <a href="./img/lifestyle-3.jpg" data-lightbox="mine"><img src="./img/lifestyle-3.jpg" alt="lifestyle-photo" class="img--animation"></a>
     
-                        <div>
-                            <figcaption>This hike was absolutely amazing! Fresh air, stunning landscape. It couldn't be better.</figcaption>
+                        <figcaption>
+                            <span> This hike was absolutely amazing! Fresh air, stunning landscape. It couldn't be better.</span>
+
                             <div class="category lifestyle-color">#Lifestyle</div>
                             <div class="category game-color">#Mountain</div>
-                        </div>
+                        </figcaption>
                     </figure>
     
                     <div class="card p-1 bg-dark" data-aos="fade-down">
@@ -198,28 +200,31 @@
                     <figure class="card" data-aos="fade-right">
                         <a href="./img/game-3.jpg" data-lightbox="mine"><img src="./img/game-3.jpg" alt="lifestle-photo"></a>
     
-                        <div>
+                        <figcaption>
                             <div class="category game-color">#Game</div>
-                            <figcaption>Let's get started. Gaming time!</figcaption>
-                        </div>
+
+                            <span>Let's get started. Gaming time!</span>
+                        </figcaption>
                     </figure>
     
                     <figure class="card">
                         <a href="./img/fashion-3.jpg" data-lightbox="mine"><img src="./img/fashion-3.jpg" alt="lifestle-photo"></a>
     
-                        <div>
+                        <figcaption>
                             <div class="category fashion-color">#fashion</div>
-                            <figcaption>My best friend and I went shopping yesterday morning. We had such a good time together!</figcaption>
-                        </div>
+
+                            <span>My best friend and I went shopping yesterday morning. We had such a good time together!</span>
+                        </figcaption>
                     </figure>
     
                     <figure class="card" data-aos="fade-left">
                         <a href="./img/lifestyle-4.jpg" data-lightbox="mine"><img src="./img/lifestyle-4.jpg" alt="lifestle-photo"></a>
     
-                        <div>
+                        <figcaption>
                             <div class="category lifestyle-color">#lifestyle</div>
-                            <figcaption>I'm making a delicious and healthy breakfast this morning</figcaption>
-                        </div>
+
+                            <span>I'm making a delicious and healthy breakfast this morning</span>
+                        </figcaption>
                     </figure>
     
                     <div class="card p-1" data-aos="fade-up">
@@ -231,10 +236,10 @@
                     </div>
     
                     <figure class="card">                    
-                        <div>
-                            <figcaption>This device is fabulous. We're not gonna stay up all night gaming. Maybe LoL.</figcaption>
+                        <figcaption>
+                            <span>This device is fabulous. We're not gonna stay up all night gaming. Maybe LoL.</span>
                             <div class="category game-color">#game</div>
-                        </div>
+                        </figcaption>
     
                         <a href="./img/game-5.jpg" data-lightbox="mine"><img src="./img/game-5.jpg" alt="lifestle-photo"></a>
                     </figure>
@@ -246,11 +251,10 @@
 
         <!-- Section: "DAILY PHOTOS" -->
         <section id="daily-photos" class="daily-photo py-2" tabindex="4">
-            <div class="container-m">
+            <div class="container-l">
 
                 <h2 class="section-title">Daily Photos</h2>
-                <div class="bottom-line"></div>
-                <p class="lead">This is a Slidershow and if you want to you can click or hover over the image</a></p>
+                <p class="lead">This is a Slidershow and if you want to you can click or hover over the image</p>
                 
                 <div class="item py-2">
 
@@ -267,19 +271,19 @@
                             <span class="cycle-pager"></span>
 
                             <div class="slide">
-                                <img id="second" src="https://source.unsplash.com/daily" alt="">
+                                <img id="first" src="https://source.unsplash.com/daily" alt="daily-photo">
 
                                 <p class="slide-text">This image changes every day and it is from the daily section of unsplash</p>
                             </div>
 
                             <div class="slide">
-                                <img id="second" src="https://source.unsplash.com/user/erondu" alt="">
+                                <img id="second" src="https://source.unsplash.com/user/erondu" alt="erondu-photo">
 
                                 <p class="slide-text">This image changes every day and it is from the erondu section of unsplash</p>
                             </div>
 
                             <div class="slide">
-                                <img id="second" src="https://source.unsplash.com/random" alt="">
+                                <img id="third" src="https://source.unsplash.com/random" alt="random-photo">
 
                                 <p class="slide-text">This is a random image from unsplash</p>
                             </div>

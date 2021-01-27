@@ -4,23 +4,7 @@
 }
 
 @import './config';
-@import './utilities';
 
-nav{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    .logo{
-        justify-self: center;
-    }
-
-    .social{display: none;}
-
-    .menu{
-        align-items: center;
-        justify-self: center;
-    }
-}
 // sticky navigation
 .sticky{
     position: fixed;
@@ -44,29 +28,37 @@ nav{
     grid-template-columns: 1fr;
     padding: 0 2em;
 
-    .showcase-content{
-        text-align: center;
-
-        p{line-height: 1.8;}
-
-        .main-btn:link, .main-btn:visited{
-            text-align: center;
-            display: block;
-            width: 50%;
-            margin: 0 auto;
-            margin-top: 2.5em;
-            padding: .5em 0;
-
-            .main-btn:focus, .main-btn:active{
-                background-color: #e69603;
-            }
-        }
-    }
-
-    .click{display: none;}
 }
-// INTRO
+.showcase-content{
+    text-align: center;
 
+    p{line-height: 1.8;}
+
+}
+
+.btn--mobile{
+
+    &:link, &:visited{
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+        margin-top: 2.5em;
+    }
+}
+
+.click{
+    &:link{
+        display: none;
+    }
+}
+
+// INTRO
+.section-intro{
+        
+    .intro-grid{
+        grid-template-columns: 1fr;
+    }
+}
 
 // LATEST
 .photo-grid{
@@ -85,6 +77,8 @@ nav{
 // DAILY
 .item{grid-template-columns:1fr;}
 
+// FORM
+.wrapper{ margin: 100px auto; }
 
 // small device
 @media(max-width: 550px){
@@ -116,23 +110,23 @@ nav{
             }
         }
         
-        .menu{
-            position: absolute;
-            top: 50px;
-            right: 20px;
+    }
+    .menu{
+        position: absolute;
+        top: 50px;
+        right: 20px;
 
-            li{
-                margin-top: 1em;
-                text-align: center;
-            }
+        li{
+            margin-top: 1.5em;
+            text-align: left;
+        }
 
-            /* menu icons */
-            a i{display: inline-block;}
+        /* menu icons */
+        a i{display: inline-block;}
 
-            & a{border: none;}
-            & a:hover{
-                border: none;
-            }
+        a{border: none;}
+        a:hover{
+            border: none;
         }
     }
     

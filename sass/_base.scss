@@ -1,0 +1,41 @@
+:root{
+    box-sizing: border-box;
+    font-size: 1.15em;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+    // scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    --primary-color:#f3a006;
+    --secondary-color:#610061;
+    --overlay-color: rgba(0, 0, 0, .45);
+    --icon-color:#fff;
+    --transition-speed: 300ms;
+}
+
+.category{
+    --lifestyle: #ebc313;
+    --game: #4682b4;
+    --fashion: #8847d1;
+}
+
+*, :before, :after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* core elements */
+// these two ways should fix the background-attachment issue on mobile;
+body{
+    background-color: $bg-main;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{list-style: none;}
+
+p, figcaption{
+    margin: .8em 0;
+    line-height: 1.6;
+}
